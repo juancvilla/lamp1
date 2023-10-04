@@ -1,4 +1,10 @@
 # lamp1
+sudo subscription-manager register
+
+sudo subscription-manager attach
+
+sudo yum module install -y container-tools
+
 podman build -t httpd-php:1.0 .
 
 podman pod create --name my-pod -p 8080:80
