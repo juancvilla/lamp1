@@ -3,7 +3,7 @@ podman build -t httpd-php:1.0 .
 
 podman pod create --name my-pod -p 8080:80
 
-podman run -d --read-only --rm --pod my-pod -v /var/www/html/:/var/www/html/:Z --tmpfs /var/log --tmpfs /var/tmp --name mydevcontainer httpd-php:1.0
+podman run -d --read-only --rm --pod my-pod -v /var/www/html/:/var/www/html/ --tmpfs /var/log --tmpfs /var/tmp --name mydevcontainer httpd-php:1.0
 
 podman login registry.redhat.io
 
