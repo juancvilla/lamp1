@@ -44,14 +44,10 @@ podman ps -a --pod
 
 curl localhost:8080/index.php
 
-podman pod ps --ctr-status
+sudo podman pod ps --ctr-status
 
-podman pod stop my-lamp
+sudo podman pod stop my-lamp
 
-podman run -d --read-only --rm --pod my-lamp -v /home/juancvilla/lamp1/html/:/var/www/html/ --tmpfs /var/log --tmpfs /var/tmp --name mydevcontainer httpd-php:1.0
-
-curl localhost:8080/index.php
-
-podman run -d --rm --pod my-lamp --name mariadb_database -e MYSQL_USER=user -e MYSQL_PASSWORD=pass -e MYSQL_DATABASE=db rhel8/mariadb-103
+sudo podman pod start my-lamp
 
 curl localhost:8080/index.php
