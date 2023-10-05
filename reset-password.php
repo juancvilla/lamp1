@@ -1,5 +1,6 @@
 <?php
 // Initialize the session
+session_save_path("/tmp/");
 session_start();
  
 // Check if the user is logged in, otherwise redirect to login page
