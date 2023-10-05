@@ -10,4 +10,11 @@
         }
         echo "Connected successfully";
         $database = mysqli_select_db($conn, 'db');
+        define('DB_SERVER', 'localhost');
+        define('DB_USERNAME', 'user');
+        define('DB_PASSWORD', 'pass');
+        define('DB_NAME', 'db');
+ 
+        /* Attempt to connect to MySQL database */
+        $link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
 ?>
