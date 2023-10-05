@@ -1,5 +1,5 @@
 # lamp1
-Example with rootless podman run --rm
+Example with PHP Mysql Login podman run --restart unless-stopped
 
 sudo subscription-manager register
 
