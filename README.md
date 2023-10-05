@@ -1,4 +1,6 @@
 # lamp1
+Example with rootless podman run --rm
+
 sudo subscription-manager register
 
 sudo subscription-manager attach
