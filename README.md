@@ -25,7 +25,12 @@ sudo podman login registry.redhat.io
 
 sudo podman pull registry.redhat.io/rhel8/mariadb-103
 
-sudo podman run -d --restart unless-stopped --pod my-lamp --name mariadb_database -e MYSQL_USER=user -e MYSQL_PASSWORD=pass -e MYSQL_DATABASE=db rhel8/mariadb-103
+mkdir /home/juancvilla/lamp1/mysql
+sudo chown -R 27:27 /home/juancvilla/lamp1/mysql
+sudo semanage fcontext -a -t container_file_t "/home/juancvilla/lamp1/mysql(/.*)?"
+sudo restorecon -Rv /home/juancvilla/lamp1/mysql
+
+sudo podman run -d --restart unless-stopped --pod my-lamp --name mariadb_database -v /home/juancvilla/lamp1/mysql:/var/lib/mysql -e MYSQL_USER=user -e MYSQL_PASSWORD=pass -e MYSQL_DATABASE=db rhel8/mariadb-103
 
 sudo podman exec -it mariadb_database bash
 
