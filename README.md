@@ -34,7 +34,8 @@ sudo podman run -d --restart unless-stopped --pod my-lamp --name mariadb_databas
 
 sudo podman exec -it mariadb_database bash
 
-mysql -uuser -p
+mysql -h127.0.0.1 -uuser -p
+
 use db;
 CREATE TABLE users (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -42,7 +43,7 @@ CREATE TABLE users (
     password VARCHAR(255) NOT NULL,
     created_at DATETIME DEFAULT CURRENT_TIMESTAMP
 );
-INSERT INTO users(username,password) VALUES("user","pass");
+
 exit
 exit
 
