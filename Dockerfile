@@ -3,6 +3,7 @@ MAINTAINER juancvilla@gmail.com
 RUN yum install -y php php-apcu php-intl php-mbstring php-xml php-json php-mysqlnd crontabs cronie iputils net-tools; yum clean all
 RUN systemctl enable httpd.service
 COPY config.php /var/www/html/config.php
+COPY index.php /var/www/html/index.php
 COPY info.php /var/www/html/info.php
 COPY login.php /var/www/html/login.php
 COPY logout.php /var/www/html/logout.php
