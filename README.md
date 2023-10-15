@@ -1,5 +1,5 @@
 # lamp1
-Example with rootless podman run --rm
+Example with rootless podman run --rm with Dockerfile
 
 sudo subscription-manager register
 
