@@ -1,5 +1,5 @@
 # lamp1
-Example with PHP Mysql Login podman run --restart unless-stopped
+Example with PHP Mysql Login podman run --restart unless-stopped with Dockerfile
 
 sudo subscription-manager register
 
@@ -13,11 +13,7 @@ sudo podman images
 
 sudo podman pod create --name my-lamp -p 8080:80
 
-sudo podman run -d --read-only --restart unless-stopped --pod my-lamp -v /home/juancvilla/lamp1/html/:/var/www/html/ --tmpfs /var/log --tmpfs /var/tmp --name mydevcontainer httpd-php:1.0
-
-sudo semanage fcontext -a -t container_file_t "/home/juancvilla/lamp1/html(/.*)?"
-
-sudo restorecon -R -v /home/juancvilla/lamp1/html
+sudo podman run -d --read-only --restart unless-stopped --pod my-lamp --tmpfs /var/log --tmpfs /var/tmp --name mydevcontainer httpd-php:1.0
 
 curl localhost:8080/index.php
 
