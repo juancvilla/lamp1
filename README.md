@@ -19,7 +19,7 @@ sudo semanage fcontext -a -t container_file_t "/home/juancvilla/lamp1/html(/.*)?
 
 sudo restorecon -R -v /home/juancvilla/lamp1/html
 
-curl localhost:80/index.php
+curl localhost:8080/index.php
 
 podman login registry.redhat.io
 
