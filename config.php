@@ -1,5 +1,5 @@
 <?php
-        echo "Hello from php! <BR>";
+        //echo "Hello from php! <BR>";
         $dbhost = '127.0.0.1';
         $dbuser = 'user';
         $dbpass = 'pass';
@@ -8,7 +8,7 @@
                 // print_r($conn);
                 die("Connection failed: " . $conn->connect_error);
         }
-        echo "Connected successfully";
+        //echo "Connected successfully";
         $database = mysqli_select_db($conn, 'db');
         define('DB_SERVER', '127.0.0.1');
         define('DB_USERNAME', 'user');
